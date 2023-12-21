@@ -10,9 +10,9 @@ class YamsTest {
     int[] roll = {1,2,3,5,6};
     int[] grandeSuite = {2,3,4,5,6};
     int[] brelan = {4,2,2,2,6};
-
     int[] carre = {1,1,6,1,1};
 
+    int[] full = {2,2,4,2,4};
 
     @Test
     void isGrandeSuiteTest(){
@@ -50,4 +50,11 @@ class YamsTest {
         Assertions.assertTrue(Yams.isCarre(carre));
 
     }
+
+    @Test
+    void isFullTest(){
+        Assertions.assertTrue(Yams.isFull(full));
+
+    }
+
 }
