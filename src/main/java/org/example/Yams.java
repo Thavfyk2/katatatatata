@@ -51,4 +51,13 @@ public class Yams {
         }
         return hasPair && isBrelan(roll);
     }
+
+    public static boolean isYams(int[] roll) {
+        for (int i = 0; i < roll.length - 1; i++) {
+            if (roll[i] != roll[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
