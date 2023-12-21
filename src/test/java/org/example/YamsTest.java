@@ -57,4 +57,9 @@ class YamsTest {
 
     }
 
+    @Test
+    void isNotFullTest(){
+        Assertions.assertFalse(Yams.isFull(brelan));
+    }
+
 }
