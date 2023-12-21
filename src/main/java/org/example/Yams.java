@@ -27,4 +27,15 @@ public class Yams {
         }
         return false;
     }
+
+    public static boolean isCarre(int[] roll) {
+        Arrays.sort(roll);
+
+        for (int i = 0; i <= roll.length - 4; i++) {
+            if (roll[i] == roll[i + 1] && roll[i] == roll[i + 2]) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
