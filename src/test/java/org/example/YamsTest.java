@@ -7,10 +7,11 @@ class YamsTest {
 
     int[] invalidRoll1 = {1,2,3,4};
     int[] invalidRoll2 = {1,2,3,4,5,6,7};
-    int[] roll1 = {1,2,3,5,6};
+    int[] roll = {1,2,3,5,6};
     int[] grandeSuite = {2,3,4,5,6};
     int[] brelan = {4,2,2,2,6};
 
+    int[] carre = {1,1,6,1,1};
 
 
     @Test
@@ -20,12 +21,12 @@ class YamsTest {
 
     @Test
     void isNotGrandeSuiteTest(){
-        Assertions.assertFalse(Yams.isGrandeSuite(roll1));
+        Assertions.assertFalse(Yams.isGrandeSuite(roll));
     }
 
     @Test
     void validRollTest(){
-        Assertions.assertFalse(Yams.validRoll(roll1));
+        Assertions.assertFalse(Yams.validRoll(roll));
     }
 
     @Test
@@ -35,12 +36,18 @@ class YamsTest {
     }
 
     @Test
-    void isBrelan(){
+    void isBrelanTest(){
         Assertions.assertTrue(Yams.isBrelan(brelan));
     }
 
     @Test
-    void isNotBrelan(){
-        Assertions.assertFalse(Yams.isBrelan(roll1));
+    void isNotBrelanTest(){
+        Assertions.assertFalse(Yams.isBrelan(roll));
+    }
+
+    @Test
+    void isCarreTest(){
+        Assertions.assertTrue(Yams.isCarre(carre));
+
     }
 }
