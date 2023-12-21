@@ -9,52 +9,44 @@ class DigitToRomanNumber {
             2, "II",
             3, "III",
             5, "V",
-            10,"X",
-            50,"L",
-            100,"C",
-            4,"IV",
-            9,"IX"
+            10, "X",
+            50, "L",
+            100, "C",
+            4, "IV",
+            9, "IX"
     );
 
-     public static StringBuilder toRomanNumber(int digit){
+    public static StringBuilder toRomanNumber(int digit) {
         int digitCopy = digit;
         StringBuilder result = new StringBuilder();
 
-        for(int i = 0; i < digitCopy; i++){
+        while(digitCopy != 0) {
 
-            if(digitCopy >= 100){
+            if (digitCopy >= 100) {
                 digitCopy -= 100;
                 result.append(ROMANS_NUMBERS.get(100));
             }
-            if(digitCopy >= 50){
+            if (digitCopy >= 50) {
                 digitCopy -= 50;
                 result.append(ROMANS_NUMBERS.get(50));
             }
-            if(digitCopy >= 10){
+            if (digitCopy >= 10) {
                 digitCopy -= 10;
                 result.append(ROMANS_NUMBERS.get(10));
             }
-            if(digitCopy == 9){
+            if (digitCopy == 9) {
                 digitCopy -= 9;
                 result.append(ROMANS_NUMBERS.get(9));
             }
-            if(digitCopy >= 5){
+            if (digitCopy >= 5) {
                 digitCopy -= 5;
                 result.append(ROMANS_NUMBERS.get(5));
             }
-            if(digitCopy == 4){
+            if (digitCopy == 4) {
                 digitCopy -= 4;
                 result.append(ROMANS_NUMBERS.get(4));
             }
-            if(digitCopy >= 3){
-                digitCopy -= 3;
-                result.append(ROMANS_NUMBERS.get(3));
-            }
-            if(digitCopy >= 2){
-                digitCopy -= 2;
-                result.append(ROMANS_NUMBERS.get(2));
-            }
-            if(digitCopy >= 1){
+            if (digitCopy >= 1) {
                 digitCopy--;
                 result.append(ROMANS_NUMBERS.get(1));
             }
