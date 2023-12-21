@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Yams {
@@ -61,31 +60,29 @@ public class Yams {
         return true;
     }
 
-    public int game(int[][] setOfRolls) {
+    public static int isChance(int[] roll) {
+        return Arrays.stream(roll).sum();
+    }
+
+    public static int game(int[][] setOfRolls) {
         int totalScore = 0;
 
-        for (int[] roll : setOfRolls) {
-            int[] intRoll = new int[6];
-
-            for (int i = 0; i < roll.length; i++) {
-                intRoll[i] = roll[i];
-            }
-
-            Arrays.sort(intRoll);
+        for (int[] intRoll : setOfRolls) {
 
             if (isYams(intRoll)) {
                 totalScore += 50;
             } else if (isGrandeSuite(intRoll)) {
                 totalScore += 40;
-            } else if (isCarre(intRoll)) {
-                totalScore += 30;
             } else if (isFull(intRoll)) {
                 totalScore += 30;
             } else if (isBrelan(intRoll)) {
                 totalScore += 28;
+            } else if (isCarre(intRoll)) {
+            totalScore += 30;
+            } else {
+                totalScore += isChance(intRoll);
             }
         }
-
         return totalScore;
     }
 }
