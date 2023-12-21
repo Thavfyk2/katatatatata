@@ -38,4 +38,17 @@ public class Yams {
         }
         return false;
     }
+
+
+
+    public static boolean isFull(int[] roll) {
+        Arrays.sort(roll);
+        boolean hasPair = false;
+        for (int i = 0; i <= roll.length - 2; i++) {
+            if (roll[i] == roll[i + 1]) {
+                hasPair = !hasPair;
+            }
+        }
+        return hasPair && isBrelan(roll);
+    }
 }
