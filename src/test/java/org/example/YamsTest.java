@@ -10,7 +10,7 @@ class YamsTest {
     int[] roll1 = {1,2,3,5,6};
     int[] grandeSuite = {2,3,4,5,6};
     int[] brelan = {4,2,2,2,6};
-    int[] notBrelan = {2,4,2,2,6};
+
 
 
     @Test
@@ -39,4 +39,8 @@ class YamsTest {
         Assertions.assertTrue(Yams.isBrelan(brelan));
     }
 
+    @Test
+    void isNotBrelan(){
+        Assertions.assertFalse(Yams.isBrelan(roll1));
+    }
 }
