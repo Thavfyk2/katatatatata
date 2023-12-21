@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class YamsTest {
+
+    int[] invalidRoll1 = {1,2,3,4};
+    int[] invalidRoll2 = {1,2,3,4,5,6,7};
     int[] roll1 = {1,2,3,5,6};
     int[] grandeSuite = {2,3,4,5,6};
 
@@ -20,6 +23,12 @@ class YamsTest {
     @Test
     void validRollTest(){
         Assertions.assertFalse(Yams.validRoll(roll1));
+    }
+
+    @Test
+    void notValidRollTest(){
+        Assertions.assertFalse(Yams.validRoll(invalidRoll1));
+        Assertions.assertFalse(Yams.validRoll(invalidRoll2));
     }
 
 
